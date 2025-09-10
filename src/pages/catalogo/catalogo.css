@@ -1,0 +1,60 @@
+.barraFiltrado{
+    display: flex;
+    justify-content: space-between;
+    width: clac(100% - 20px);
+    height: 40px;
+    padding: 10px;
+    align-items: center;
+
+    .ordenarPor{
+        padding: 0.3rem 0.2rem;
+        min-width: 150px;
+        background-color: white;
+        border: solid rgb(22, 36, 80) 1px;
+        font-size: 14px;
+        font-family: DINNextLTPro-Bold;
+        font-weight: 700;
+        color: rgb(22, 36, 80);
+        text-align: center;
+    }
+
+    .filtros{
+        all: unset;
+        display: flex;
+        cursor: pointer;
+        justify-content: space-around;
+        align-items: center;
+        color: rgb(22, 36, 80);
+        font-family: -apple-system, BlinkMacSystemFont, avenir next, avenir, helvetica neue, helvetica, ubuntu, roboto, noto, segoe ui, arial, sans-serif;
+        font-size: 14px;
+        font-weight: 750;
+        letter-spacing: 1.4px;
+        min-width: 6rem;
+
+        img{
+            width: 23px;
+        }
+    }
+
+    p{
+        color: rgb(184, 184, 184);
+        font-size: 12px;
+        font-family: DINNextLTPro-Regular;
+        font-weight: 700;
+    }
+}
+.catalogoProductos{
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 24%));
+    gap: 10px;
+    justify-content: center;
+    padding: 2rem;
+    padding-top: 0;
+    width: 100%;
+    transition: all 0.6s ease;
+}
+
+.separacion{
+    height: 40px;
+    width: 100%;
+}

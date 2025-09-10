@@ -1,0 +1,19 @@
+.productoCatalogo{
+    
+    padding: 1%;
+    cursor: pointer;
+    text-decoration: none;
+    color: inherit;
+
+    img{
+        width: 100%;
+        aspect-ratio: 1 / 2;
+        max-height: 500px;
+        object-fit: cover;
+    }
+
+    h4,p{
+        margin: 5px 0;
+    }
+
+}

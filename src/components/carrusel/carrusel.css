@@ -1,0 +1,46 @@
+.carrusel {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.caras {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+    width: 100%;
+    height: 100%;
+}
+
+.cara {
+    min-width: 100%;
+}
+
+.cara img,
+.cara video {
+    width: 100%;
+    object-fit: cover;
+    height: 100%;
+}
+
+#atras,
+#adelante {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: transparent;
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    font-size: 40px;
+    z-index: 10;
+}
+
+#atras {
+    left: 10px;
+}
+
+#adelante {
+    right: 10px;
+}
