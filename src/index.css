@@ -1,0 +1,21 @@
+/*Muchachos, acá vamos a dejar los estilos globales mientras tanto*/
+:root {
+    --color-principal: #162450;
+    --color-texto-oscuro: #333;
+    --color-texto-claro: #f1f1f1;
+    --color-borde-suave: #ddd;
+    --color-footer-fondo: #1a1a1a;
+    --font-principal: Arial, sans-serif;
+    --font-display: 'DINNextLTPro-Regular', sans-serif;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: var(--font-principal);
+    color: var(--color-texto-oscuro);
+}

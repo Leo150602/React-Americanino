@@ -1,0 +1,69 @@
+
+#divFooter {
+    background-color: #1c1c1c;
+    color: #a0a0a0;
+    padding: 3rem 2rem;
+}
+
+#divFooter .footerContenedor {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 2rem;
+    padding-bottom: 2rem;
+}
+
+#divFooter .footerColumna h4 {
+    font-size: 0.9rem;
+    font-weight: bold;
+    color: white;
+    margin-bottom: 1rem;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+#divFooter .footerColumna ul {
+    list-style: none;
+}
+
+#divFooter .footerColumna ul li {
+    margin-bottom: 0.7rem;
+}
+
+#divFooter .footerColumna a {
+    color: #a0a0a0;
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+#divFooter .footerColumna a:hover {
+    color: white;
+}
+
+#divFooter .footerRedes {
+    display: flex;
+    gap: 1rem;
+}
+
+#divFooter .iconoRedSocial {
+    width: 24px;
+    height: 24px;
+    stroke: #a0a0a0;
+    stroke-width: 1.5;
+    fill: none;
+    transition: stroke 0.2s ease;
+}
+
+#divFooter .iconoRedSocial:hover {
+    stroke: white;
+}
+
+#divFooter .footerInferior {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding-top: 2rem;
+    border-top: 1px solid #333;
+    text-align: center;
+    font-size: 0.8rem;
+}
