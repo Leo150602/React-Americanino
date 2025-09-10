@@ -19,3 +19,8 @@ body {
     font-family: var(--font-principal);
     color: var(--color-texto-oscuro);
 }
+
+.espaciado{
+    height: 50px;
+    z-index: 0;
+}
