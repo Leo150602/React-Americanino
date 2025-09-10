@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import Swal from "sweetalert2";
 import logo from "../assets/logoAmericanino.png";
-import "./barraNavegacion.css";
+import "./barraNavegacion.css"
 
 export default function Navbar({ idPagina = "index" }) {
     
