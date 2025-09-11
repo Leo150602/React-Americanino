@@ -30,6 +30,10 @@
         font-weight: 750;
         letter-spacing: 1.4px;
         min-width: 6rem;
+
+        img{
+            width: 23px;
+        }
     }
 
     p{
@@ -38,4 +42,19 @@
         font-family: DINNextLTPro-Regular;
         font-weight: 700;
     }
+}
+.catalogoProductos{
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 24%));
+    gap: 10px;
+    justify-content: center;
+    padding: 2rem;
+    padding-top: 0;
+    width: 100%;
+    transition: all 0.6s ease;
+}
+
+.separacion{
+    height: 40px;
+    width: 100%;
 }
