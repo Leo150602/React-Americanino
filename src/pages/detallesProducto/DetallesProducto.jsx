@@ -1,30 +1,22 @@
 import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
-import { getProductoById } from "../utils/api";
-import ImagesProductos from "../components/ImagesProductos";
-import DescripProducto from "../components/DescripProducto";
+import { endpoints } from "../../utils/api"
+
 import "./DetallesProducto.css"
 
 function DetallesProductos() {
-    const { id } = useParams();
-    const [producto, setProducto] = useState(null);
 
-    useEffect(() => {
-        getProductoById(id).then((data) => {
-            setProducto(data);
-        });
-    }, [id]);
+    //variables para guardar el proucto de render
+    const [produco, getProducto] = useState(null)
 
-    if (!producto) {
-        return <p>Cargando producto...</p>;
-    }
+    //se trae la informacion del render con el endpoint
+    fetch(endpoints.productos)
+    .then((respuesta) => respuesta.json())
+    .then((data) => getProducto(data))
+    .catch((error) => console.log(error)
+    )
 
-    return (
-        <div className="detalleProducto">
-            <ImagesProductos producto={producto} />
-            <DescripProducto producto={producto} />
-        </div>
-    );
+    
 }
 
 export default DetallesProductos;
