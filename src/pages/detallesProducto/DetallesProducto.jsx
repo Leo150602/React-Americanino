@@ -1,19 +1,18 @@
 import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
-import { getProductoById } from "../utils/api";
-import ImagesProductos from "../components/ImagesProductos";
-import DescripProducto from "../components/DescripProducto";
+import ImagesProductos from "../../components/contenidoDetallesProducto/ImagesProductos";
+import DescripProducto from "../../components/contenidoDetallesProducto/DescripProductos";
 import "./DetallesProducto.css"
 
 function DetallesProductos() {
     const { id } = useParams();
     const [producto, setProducto] = useState(null);
 
-    useEffect(() => {
-        getProductoById(id).then((data) => {
-            setProducto(data);
-        });
-    }, [id]);
+    //useEffect(() => {     -> arreglar esto, get producto by id no existe en utils aun, despues de crearla importarla
+      //  getProductoById(id).then((data) => {
+        //    setProducto(data);
+       // });
+    //}, [id]);
 
     if (!producto) {
         return <p>Cargando producto...</p>;
