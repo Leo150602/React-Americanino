@@ -3,6 +3,7 @@ import Swal from "sweetalert2";
 import "./DescripProductos.css"
 
 function DescripProducto({ producto }) {
+    const info = producto?.info || {};
     const [seleccionTalla, setSeleccionTalla] = useState(null);
 
     const agregarCarrito = () => {
@@ -24,36 +25,40 @@ function DescripProducto({ producto }) {
         localStorage.setItem("productos", JSON.stringify(productosGuardados));
         window.dispatchEvent(new CustomEvent("productoAgregado"));
     };
-
+    
     return (
         <div className="infoProducto">
-            <h2>{producto.nombre}</h2>
-            <p className="precioProducto">${producto.precio}</p>
+            <h2>{info.nombre}</h2>
+            <p className="precioProducto">${info.precio}</p>
 
             <div className="divTallas">
                 <h3>Tallas:</h3>
-                {Object.keys(producto.cantidades).map((talla, i) => (
-                    <p
-                        key={i}
-                        className="talla"
-                        onClick={() => setSeleccionTalla(talla)}
-                        style={{
-                            backgroundColor: seleccionTalla === talla ? "rgba(26, 26, 122, 1)" : "",
-                            color: seleccionTalla === talla ? "#fff" : "black",
-                        }}
-                    >
-                        {talla}
-                    </p>
-                ))}
+                {info.cantidades && Object.keys(info.cantidades).length > 0 ? (
+                    Object.keys(info.cantidades).map((talla, i) => (
+                        <p
+                            key={i}
+                            className="talla"
+                            onClick={() => setSeleccionTalla(talla)}
+                            style={{
+                                backgroundColor: seleccionTalla === talla ? "rgba(26, 26, 122, 1)" : "",
+                                color: seleccionTalla === talla ? "#fff" : "black",
+                            }}
+                        >
+                            {talla}
+                        </p>
+                    ))
+                ) : (
+                    <p>No hay tallas disponibles</p>
+                )}
             </div>
 
             <button id="botonCompra" onClick={agregarCarrito}>
                 Agregar al carrito
             </button>
 
-            <p className="descripcionProducto">{producto.descripcion}</p>
-            <p className="paisFabricacion">{producto.paisFabricacion}</p>
-            <p className="empresaFabricacion">{producto.fabricante}</p>
+            <p className="descripcionProducto">{info.descripcion}</p>
+            <p className="paisFabricacion">{info.paisFabricacion}</p>
+            <p className="empresaFabricacion">{info.fabricante}</p>
         </div>
     );
 }
