@@ -1,13 +1,16 @@
 import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
-import { endpoints } from "../../utils/api"
-
+import ImagesProductos from "../../components/contenidoDetallesProducto/ImagesProductos";
+import DescripProducto from "../../components/contenidoDetallesProducto/DescripProductos";
 import "./DetallesProducto.css"
 
 function DetallesProductos() {
 
-    //variables para guardar el proucto de render
-    const [produco, getProducto] = useState(null)
+    //useEffect(() => {     -> arreglar esto, get producto by id no existe en utils aun, despues de crearla importarla
+      //  getProductoById(id).then((data) => {
+        //    setProducto(data);
+       // });
+    //}, [id]);
 
     //se trae la informacion del render con el endpoint
     fetch(endpoints.productos)
@@ -16,7 +19,7 @@ function DetallesProductos() {
     .catch((error) => console.log(error)
     )
 
-    
+
 }
 
 export default DetallesProductos;
