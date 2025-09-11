@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import Swal from "sweetalert2";
 import logo from "../assets/logoAmericanino.png";
 import "./barraNavegacion.css"
+import { Link } from "react-router-dom";
 
 export default function Navbar({ idPagina = "index" }) {
     
@@ -271,9 +272,9 @@ export default function Navbar({ idPagina = "index" }) {
                 </nav>
 
                 <div className="navegacionCategorias">
-                    <a href="/html/paginaProductos.html?categoria=hombre" className="enlaceCategoria">HOMBRE</a>
-                    <a href="/html/paginaProductos.html?categoria=mujer" className="enlaceCategoria">MUJER</a>
-                    <a href="/html/paginaProductos.html?categoria=nuevo" className="enlaceCategoria">NUEVO</a>
+                    <a href="/html/paginaProductos.html?categoria=hombre" className="enlaceCategoria"><Link to="/catalogo/hombre">HOMBRE</Link></a>
+                    <a href="/html/paginaProductos.html?categoria=mujer" className="enlaceCategoria"><Link to="/catalogo/mujer">MUJER</Link></a>
+                    <a href="/html/paginaProductos.html?categoria=nuevo" className="enlaceCategoria"><Link to="/catalogo/sale">SALE</Link></a>
                     <a href="/html/paginaProductos.html?categoria=sale" className="enlaceCategoria categoriaSale">SALE</a>
                 </div>
             </header>
