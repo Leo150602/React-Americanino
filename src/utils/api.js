@@ -1,11 +1,8 @@
-const API_URL = ""; // url de render pocaluz
 
-export function getProductos() {
-    return fetch(`${API_URL}/productos`)
-        .then((res) => res.json());
+const URL = "https://back-americanino.onrender.com/"
+
+export let endpoints = {
+    productos : `${URL}producto`,
+    imagenes : `${URL}fotosProducto`
 }
 
-export function getProductoById(id) {
-    return fetch(`${API_URL}/productos/${id}`)
-        .then((res) => res.json());
-}
