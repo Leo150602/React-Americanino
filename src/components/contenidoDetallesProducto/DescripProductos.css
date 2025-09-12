@@ -7,19 +7,14 @@
 
 .infoProducto h2 {
     font-size: 2rem;
-    margin: 0;
+    margin-bottom: 0.5rem;
 }
 
 .precioProducto {
-    font-size: 1.5rem;
+    font-size: 1.6rem;
     font-weight: bold;
     color: #1a1a7a;
-}
-
-.divTallas {
-    display: flex;
-    gap: 0.5rem;
-    flex-wrap: wrap;
+    margin-bottom: 1rem;
 }
 
 .talla {
@@ -34,8 +29,14 @@
     background-color: #eee;
 }
 
+.divTallas {
+    display: flex;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+}
+
 #botonCompra {
-    padding: 0.8rem 1.5rem;
+    padding: 0.9rem 1.5rem;
     background-color: #1a1a7a;
     color: #fff;
     border: none;
@@ -44,15 +45,13 @@
     font-size: 1rem;
     font-weight: bold;
     transition: background-color 0.3s;
-}
-
-#botonCompra:hover {
-    background-color: #000066;
+    margin-bottom: 1.5rem;
 }
 
 .descripcionProducto,
 .paisFabricacion,
 .empresaFabricacion {
-    font-size: 0.95rem;
+    font-size: 1rem;
     color: #444;
+    line-height: 1.6;
 }

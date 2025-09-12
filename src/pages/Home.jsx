@@ -1,23 +1,16 @@
-import Navbar from "../components/barraNavegacion";
-import Carrusel from "../components/carrusel/Carrusel";
-import Footer from "../components/footer";
-import Panel1x1 from "../components/paneles/Panel1x1";
-import Panel2x1 from "../components/paneles/panel2x1";
-import Panel4x1 from "../components/paneles/Panel4x1";
+import Carrusel from "../components/carrusel/Carrusel.jsx";
+import Panel1x1 from "../components/paneles/Panel1x1.jsx";
+import Panel2x1 from "../components/paneles/Panel2x1.jsx";
+import Panel4x1 from "../components/paneles/Panel4x1.jsx";
 
-export default function Home(){
-let fotos=["imagenNewDrop.webp"]
-    return(
-
+export default function Home() {
+    const fotos = ["imagenNewDrop.webp"];
+    return (
         <div>
-            <Navbar/>
-            <Carrusel video="videoCarrusel.mp4" fotos={fotos}/> 
-            <Panel2x1/>
-            <Panel4x1/>
-            <Panel1x1/>
-            <Footer/>
+            <Carrusel video="videoCarrusel.mp4" fotos={fotos} />
+            <Panel2x1 />
+            <Panel4x1 />
+            <Panel1x1 />
         </div>
-
-    )
-
+    );
 }
