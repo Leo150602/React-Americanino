@@ -1,6 +1,9 @@
 import Navbar from "../components/barraNavegacion";
 import Carrusel from "../components/carrusel/Carrusel";
 import Footer from "../components/footer";
+import Panel1x1 from "../components/paneles/Panel1x1";
+import Panel2x1 from "../components/paneles/panel2x1";
+import Panel4x1 from "../components/paneles/Panel4x1";
 
 export default function Home(){
 let fotos=["imagenNewDrop.webp"]
@@ -8,7 +11,10 @@ let fotos=["imagenNewDrop.webp"]
 
         <div>
             <Navbar/>
-           <Carrusel video="videoCarrusel2.mp4" fotos={fotos}/> 
+            <Carrusel video="videoCarrusel.mp4" fotos={fotos}/> 
+            <Panel2x1/>
+            <Panel4x1/>
+            <Panel1x1/>
             <Footer/>
         </div>
 

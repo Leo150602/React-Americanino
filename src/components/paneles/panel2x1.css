@@ -1,0 +1,33 @@
+.panel2x1{
+
+    display: flex;
+    width: 94%;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    margin: 3%;
+
+    h1{
+        width: 100%;
+        text-align: center;
+        justify-content: center;
+        margin-bottom: 3%;
+        font-size: 25px;
+        letter-spacing: 4px;
+        font-family: DINNextLTPro-Regular;
+        font-weight: 700;
+        
+    }
+
+    a{
+        width: 35%;
+        margin: 0.4rem;
+
+        img{
+            width: 100%;
+        }
+
+        
+    }
+
+}

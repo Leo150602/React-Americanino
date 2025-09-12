@@ -14,7 +14,7 @@ export default function Rutas(){
                 <Route path="/" element={<Home/>} />
                 <Route path="/catalogo/" >
                 
-                    <Route path="hombre" element={<Catalogo tipo="hpmbre"/>}/>
+                    <Route path="hombre" element={<Catalogo tipo="hombre"/>}/>
                     <Route path="mujer" element={<Catalogo tipo="mujer"/>}/>
                     <Route path="sale" element={<Catalogo tipo="sale"/>}/>
                 

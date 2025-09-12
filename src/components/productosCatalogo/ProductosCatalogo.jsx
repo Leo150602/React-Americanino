@@ -1,16 +1,19 @@
 import { Link } from "react-router-dom"
 import "./productosCatalogo.css"
+
 export default function ProductosCatalogo({producto, id}){
-let imagen= "../src/assets/imagenes/fotosProductos/"+ producto.foto
-let link= "/detallesProducto/" + id
+    const URL = "https://back-americanino.onrender.com"
+    let link= "/detallesProducto/" + id
+    let imagen = URL + producto.info.elementos[0].fotosProducto[0]
+    console.log(imagen);
 
-    return(
+        return(
 
-        <Link className="productoCatalogo" to={link} >
-            <img src={imagen} />
-            <p>{producto.nombre}</p>
-            <h4>{producto.precio}</h4>
-        </Link>
-    )
+            <Link className="productoCatalogo" to={link} >
+                <img src={imagen} />
+                <p>{producto.info.nombre}</p>
+                <h4>{producto.info.precio}</h4>
+            </Link>
+        )
 
 }
