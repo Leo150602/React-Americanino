@@ -1,9 +1,11 @@
 .productoCatalogo{
     
     padding: 1%;
+    position: relative;
     cursor: pointer;
     text-decoration: none;
     color: inherit;
+    z-index: 99;
 
     img{
         width: 100%;
@@ -14,6 +16,18 @@
 
     h4,p{
         margin: 5px 0;
+    }
+
+    .descuento{
+        justify-content: end;
+        position: absolute;
+        background-color: #162450;  
+        color: white;  
+        z-index: 100;
+        font-size: 12px;
+        font-weight: 700;
+        padding: 0.2rem 0.4rem;
+        right: 0;
     }
 
 }
