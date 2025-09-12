@@ -46,7 +46,7 @@
 .catalogoProductos{
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(200px, 24%));
-    gap: 10px;
+    gap: 3px;
     justify-content: center;
     padding: 2rem;
     padding-top: 0;

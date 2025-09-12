@@ -1,0 +1,27 @@
+.panel4x1{
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    align-items: center;
+    margin-bottom: 3%;
+
+    a{
+
+        width: 22%;
+        margin: 0.4rem;
+        text-decoration: none;
+        font-size: 14px;
+        color: #162450;
+
+        img{
+            width: 100%;
+        }
+
+        .textoGrande{
+            font-size: 12px;
+            font-weight: 800;
+            text-decoration: underline;
+        }
+
+    }
+}
