@@ -22,7 +22,7 @@ function DetallesProductos() {
     return (
         <div className="detalles-producto">
             <ImagesProductos producto={producto} />
-            <DescripProducto producto={producto} />
+            <DescripProducto producto={producto} id={id} />
         </div>
     );
 }

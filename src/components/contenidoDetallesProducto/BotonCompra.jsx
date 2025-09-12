@@ -1,29 +1,29 @@
-import React, { useState } from "react";
 import Swal from "sweetalert2";
 import styled from "styled-components";
 
-const Button = () => {
-  const [seleccionTalla, setSeleccionTalla] = useState(null);
+const Button = ({talla, id}) => {
 
   const agregarCarrito = () => {
-    if (!seleccionTalla) {
+    console.log(talla);
+    
+    if (!talla) {
       return Swal.fire(
         "Por favor selecciona una talla antes de agregar al carrito."
-      );
+      )
     }
 
     let productosGuardados =
       JSON.parse(localStorage.getItem("productos")) || [];
     const indexExistente = productosGuardados.findIndex(
-      (p) => p.id === producto.id && p.talla === seleccionTalla
+      (p) => p.id === id && p.talla === talla
     );
 
     if (indexExistente !== -1) {
       productosGuardados[indexExistente].cantidad += 1;
     } else {
       productosGuardados.push({
-        id: producto.id,
-        talla: seleccionTalla,
+        id: id,
+        talla: talla,
         cantidad: 1,
       });
     }
@@ -34,7 +34,7 @@ const Button = () => {
 
   return (
     <StyledWrapper>
-      <button className="cartBtn" id="botonCompra" onClick={agregarCarrito}>
+      <button className="cartBtn" id="botonCompra" onClick={agregarCarrito }>
         <svg
           className="cart"
           fill="white"

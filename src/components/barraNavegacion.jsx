@@ -3,8 +3,9 @@ import Swal from "sweetalert2";
 import logo from "../assets/logoAmericanino.png";
 import "./barraNavegacion.css"
 import { Link, NavLink } from "react-router-dom";
+import CarritoDeCompras from "./carritoDeCompras/CarritoDeCompras";
 
-export default function Navbar({ idPagina = "index" }) {
+export default function Navbar({ idPagina = "index" , abrirCarrito}) {
 
     const [menuMovilAbierto, setMenuMovilAbierto] = useState(false);
     const [panelAuthAbierto, setPanelAuthAbierto] = useState(false);
@@ -189,7 +190,7 @@ export default function Navbar({ idPagina = "index" }) {
                             <>
                                 <span className="saludoUsuario">Hola, {usuario.nombre}</span>
                                 <a
-                                    href="#"
+                                    
                                     id="enlaceLogout"
                                     className="enlaceNavegacion"
                                     onClick={manejarLogout}
@@ -209,7 +210,7 @@ export default function Navbar({ idPagina = "index" }) {
                                 </a>
 
                                 <a
-                                    href="#"
+                                    
                                     id="btnCarrito"
                                     className="enlaceNavegacion"
                                     aria-label="Carrito de compras"
@@ -249,7 +250,8 @@ export default function Navbar({ idPagina = "index" }) {
                                 </a>
 
                                 <a
-                                    href="#"
+                                    onClick={
+                                        abrirCarrito}
                                     id="btnCarrito"
                                     className="enlaceNavegacion"
                                     aria-label="Carrito de compras"

@@ -5,7 +5,7 @@ export default function ProductosCatalogo({producto, id, descuento}){
     const URL = "https://back-americanino.onrender.com"
     let link= "/detallesProducto/" + id
     let imagen = URL + producto.info.elementos[0].fotosProducto[0]
-    console.log(imagen);
+    
 
         return(
 

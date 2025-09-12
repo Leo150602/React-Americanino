@@ -2,7 +2,7 @@ import "./DescripProductos.css"
 import BotonCompra from "./BotonCompra"
 import { useState } from "react";
 
-function DescripProducto({ producto }) {
+function DescripProducto({ producto, id }) {
     const info = producto?.info || {};
     const [seleccionTalla, setSeleccionTalla] = useState(null);
     
@@ -32,7 +32,7 @@ function DescripProducto({ producto }) {
                 )}
             </div>
 
-            <BotonCompra />
+            <BotonCompra talla={seleccionTalla} id={id} />
 
             <p className="descripcionProducto">{info.descripcion}</p>
             <p className="paisFabricacion">{info.paisFabricacion}</p>
