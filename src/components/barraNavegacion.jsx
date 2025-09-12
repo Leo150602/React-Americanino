@@ -5,7 +5,7 @@ import "./barraNavegacion.css"
 import { Link } from "react-router-dom";
 
 export default function Navbar({ idPagina = "index" }) {
-    
+
     const [menuMovilAbierto, setMenuMovilAbierto] = useState(false);
     const [panelAuthAbierto, setPanelAuthAbierto] = useState(false);
     const [vistaLogin, setVistaLogin] = useState(true);
@@ -86,7 +86,7 @@ export default function Navbar({ idPagina = "index" }) {
         const nuevo = {
             nombre: nombreRegistro.trim(),
             email: correoRegistro.trim(),
-            password: contrasenaRegistro, 
+            password: contrasenaRegistro,
         };
         usuarios.push(nuevo);
         guardarUsuariosLS(usuarios);
@@ -272,10 +272,10 @@ export default function Navbar({ idPagina = "index" }) {
                 </nav>
 
                 <div className="navegacionCategorias">
-                    <a href="/html/paginaProductos.html?categoria=hombre" className="enlaceCategoria"><Link to="/catalogo/hombre">HOMBRE</Link></a>
-                    <a href="/html/paginaProductos.html?categoria=mujer" className="enlaceCategoria"><Link to="/catalogo/mujer">MUJER</Link></a>
-                    <a href="/html/paginaProductos.html?categoria=nuevo" className="enlaceCategoria"><Link to="/catalogo/sale">SALE</Link></a>
-                    <a href="/html/paginaProductos.html?categoria=sale" className="enlaceCategoria categoriaSale">SALE</a>
+                    <Link to="/catalogo/hombre" className="enlaceCategoria">HOMBRE</Link>
+                    <Link to="/catalogo/mujer" className="enlaceCategoria">MUJER</Link>
+                    <Link to="/catalogo/nuevo" className="enlaceCategoria">NUEVO</Link>
+                    <Link to="/catalogo/sale" className="enlaceCategoria categoriaSale">SALE</Link>
                 </div>
             </header>
 
