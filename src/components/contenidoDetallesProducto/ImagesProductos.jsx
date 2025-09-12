@@ -1,9 +1,17 @@
 import { useState } from "react";
 import "./ImagesProductos.css"
 
+
 function ImagesProductos({ producto }) {
-    const fotos = producto?.elementos?.[0]?.fotosProducto || [];
-    const [imagenPrincipal, setImagenPrincipal] = useState(fotos[0]);
+    const info = producto?.info || {};
+    const elementos = info.elementos || [];
+    const fotos = elementos[0]?.fotosProducto || [];
+    const [imagenPrincipal, setImagenPrincipal] = useState(fotos[0] || null);
+    const URL = "https://back-americanino.onrender.com/";
+
+    if (!fotos.length) {
+        return <div>No hay imágenes disponibles para este producto.</div>;
+    }
 
     return (
         <div className="galeriaProducto">
@@ -11,7 +19,7 @@ function ImagesProductos({ producto }) {
                 {fotos.map((foto, index) => (
                     <img
                         key={index}
-                        src={`/imagenes/fotosProductos/${foto}`}
+                        src={`${URL}/${foto}`}
                         alt={`Miniatura ${index + 1}`}
                         className="miniatura"
                         onClick={() => setImagenPrincipal(foto)}
@@ -20,11 +28,15 @@ function ImagesProductos({ producto }) {
             </div>
 
             <div className="contenedorImgPrincipal">
-                <img
-                    src={`/imagenes/fotosProductos/${imagenPrincipal}`}
-                    alt={producto.nombre}
-                    className="imagen-principal"
-                />
+                {imagenPrincipal ? (
+                    <img
+                        src={`${URL}/${imagenPrincipal}`}
+                        alt={info.nombre}
+                        className="imagen-principal"
+                    />
+                ) : (
+                    <div>Imagen principal no disponible</div>
+                )}
             </div>
         </div>
     );
