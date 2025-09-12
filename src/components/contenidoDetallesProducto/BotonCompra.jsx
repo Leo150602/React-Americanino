@@ -1,11 +1,10 @@
 import Swal from "sweetalert2";
 import styled from "styled-components";
 
-const Button = ({talla, id}) => {
+const Button = ({ talla, id }) => {
 
   const agregarCarrito = () => {
-    console.log(talla);
-    
+
     if (!talla) {
       return Swal.fire(
         "Por favor selecciona una talla antes de agregar al carrito."
@@ -30,11 +29,14 @@ const Button = ({talla, id}) => {
 
     localStorage.setItem("productos", JSON.stringify(productosGuardados));
     window.dispatchEvent(new CustomEvent("productoAgregado"));
+    return Swal.fire(
+        "Se ha agregado un producto al carrito éxtiosamente."
+      )
   };
 
   return (
     <StyledWrapper>
-      <button className="cartBtn" id="botonCompra" onClick={agregarCarrito }>
+      <button className="cartBtn" id="botonCompra" onClick={agregarCarrito}>
         <svg
           className="cart"
           fill="white"
@@ -60,8 +62,8 @@ const Button = ({talla, id}) => {
 
 const StyledWrapper = styled.div`
   .cartBtn {
-    width: 180px;
-    height: 60px;
+    width: 450px;
+    height: 50px;
     border: none;
     border-radius: 0px;
     display: flex;
@@ -81,6 +83,7 @@ const StyledWrapper = styled.div`
   }
 
   .cart {
+    position: relative;
     z-index: 2;
   }
 
@@ -90,14 +93,15 @@ const StyledWrapper = styled.div`
 
   .product {
     position: absolute;
-    width: 12px;
+    top: 30%;
+    left: 28%;
+    transform: translate(-10%, -50%); 
+    width: 16px;
     border-radius: 3px;
-    content: "";
-    left: 23px;
-    bottom: 23px;
     opacity: 0;
     z-index: 1;
     fill: rgb(211, 211, 211);
+    pointer-events: none;
   }
 
   .cartBtn:hover .product {
@@ -106,7 +110,7 @@ const StyledWrapper = styled.div`
 
   @keyframes slide-in-top {
     0% {
-      transform: translateY(-30px);
+      transform: translate(-50%, -80%);
       opacity: 1;
     }
 
@@ -134,3 +138,5 @@ const StyledWrapper = styled.div`
 `;
 
 export default Button;
+
+

@@ -8,7 +8,7 @@ function DescripProducto({ producto, id }) {
     
     return (
         <div className="infoProducto">
-            <h2>{info.nombre}</h2>
+            <h2 className="nombre-Producto">{info.nombre}</h2>
             <p className="precioProducto">${info.precio}</p>
 
             <div className="divTallas">
