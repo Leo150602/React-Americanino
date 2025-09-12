@@ -5,11 +5,11 @@ import styled from "styled-components";
 const Button = () => {
   const [seleccionTalla, setSeleccionTalla] = useState(null);
 
-  const agregarCarrito = () => {
-    if (!seleccionTalla) {
+  const agregarCarrito = (talla) => {
+    if (talla != null) {
       return Swal.fire(
         "Por favor selecciona una talla antes de agregar al carrito."
-      );
+      )
     }
 
     let productosGuardados =
