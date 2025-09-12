@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import Swal from "sweetalert2";
 import logo from "../assets/logoAmericanino.png";
 import "./barraNavegacion.css"
-import { Link } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 
 export default function Navbar({ idPagina = "index" }) {
 
@@ -179,9 +179,9 @@ export default function Navbar({ idPagina = "index" }) {
                     </div>
 
                     <div className="seccionCentro">
-                        <a href="/" id="logoPrincipal" aria-label="Inicio">
+                        <Link to="/" id="logoPrincipal" aria-label="Inicio">
                             <img src={logo} alt="Logo Americanino" />
-                        </a>
+                        </Link>
                     </div>
 
                     <div className="seccionDerecha">
@@ -272,10 +272,9 @@ export default function Navbar({ idPagina = "index" }) {
                 </nav>
 
                 <div className="navegacionCategorias">
-                    <Link to="/catalogo/hombre" className="enlaceCategoria">HOMBRE</Link>
-                    <Link to="/catalogo/mujer" className="enlaceCategoria">MUJER</Link>
-                    <Link to="/catalogo/nuevo" className="enlaceCategoria">NUEVO</Link>
-                    <Link to="/catalogo/sale" className="enlaceCategoria categoriaSale">SALE</Link>
+                    <NavLink to="/catalogo/hombre" className="enlaceCategoria">HOMBRE</NavLink>
+                    <NavLink to="/catalogo/mujer" className="enlaceCategoria">MUJER</NavLink>
+                    <NavLink to="/catalogo/sale" className="enlaceCategoria categoriaSale">SALE</NavLink>
                 </div>
             </header>
 
@@ -293,10 +292,10 @@ export default function Navbar({ idPagina = "index" }) {
                     </button>
                 </div>
                 <ul className="panelLateralLista">
-                    <li><a href="/html/paginaProductos.html?categoria=nuevo">NUEVO</a></li>
-                    <li><a href="/html/paginaProductos.html?categoria=hombre">HOMBRE</a></li>
-                    <li><a href="/html/paginaProductos.html?categoria=mujer">MUJER</a></li>
-                    <li><a href="/html/paginaProductos.html?categoria=descuento">DESCUENTO</a></li>
+
+                    <li><NavLink to="/catalogo/hombre" onClick={() => setMenuMovilAbierto(false)}>HOMBRE</NavLink></li>
+                    <li><NavLink to="/catalogo/mujer" onClick={() => setMenuMovilAbierto(false)}>MUJER</NavLink></li>
+                    <li><NavLink to="/catalogo/sale" onClick={() => setMenuMovilAbierto(false)}>SALE</NavLink></li>
                 </ul>
             </div>
 
