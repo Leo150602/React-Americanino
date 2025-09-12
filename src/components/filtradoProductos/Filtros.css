@@ -1,0 +1,28 @@
+.filtro{
+    width: 100%;
+    
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    overflow: hidden;
+    align-items: center;
+    
+    h2{
+        padding: 10px;
+        width: 70%;
+        text-align: start;
+        height: 40px;
+    }
+
+    img{
+        
+        height: 20px;
+        
+    }
+    
+}
+.botonFiltros{
+    padding: 5px 10px;
+    font-size: 14px;
+    margin: 1%;
+}

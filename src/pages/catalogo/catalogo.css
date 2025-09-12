@@ -7,17 +7,31 @@
     align-items: center;
     margin-top: 70px;
 
-    .ordenarPor{
-        padding: 0.3rem 0.2rem;
+    .ordenado{
         min-width: 150px;
-        background-color: white;
-        border: solid rgb(22, 36, 80) 1px;
-        font-size: 14px;
-        font-family: DINNextLTPro-Bold;
-        font-weight: 700;
-        color: rgb(22, 36, 80);
-        text-align: center;
+        display: flex;
+        flex-direction: column;
+        position: relative;
+        
+        z-index: 999999;
+
+
+        .ordenarPor{
+            padding: 0.3rem 0.2rem;
+            width: 100%;
+            background-color: white;
+            border: solid rgb(22, 36, 80) 1px;
+            font-size: 14px;
+            font-family: DINNextLTPro-Bold;
+            font-weight: 700;
+            color: rgb(22, 36, 80);
+            text-align: center;
+            cursor: pointer;
+        }
+
     }
+
+
 
     .filtros{
         all: unset;
@@ -44,6 +58,16 @@
         font-weight: 700;
     }
 }
+
+.catalogoCompleto{
+
+    display: flex;
+    flex-wrap: wrap;
+    
+
+
+}
+
 .catalogoProductos{
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(200px, 24%));
@@ -51,7 +75,7 @@
     justify-content: center;
     padding: 2rem;
     padding-top: 0;
-    width: 100%;
+    flex: 1;
     transition: all 0.6s ease;
 }
 
