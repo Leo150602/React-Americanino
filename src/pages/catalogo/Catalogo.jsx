@@ -3,13 +3,13 @@ import ProductosCatalogo from "../../components/productosCatalogo/ProductosCatal
 import "./catalogo.css"
 import { endpoints } from "../../utils/api";
 
-export default function Catalogo(){
+export default function Catalogo({tipo}){
 
     const [getProductos, setProductos] = useState([]);
     function consultarProductos() {
       fetch(endpoints.productos)
         .then((response) => response.json())
-        .then((data) => {
+        .then((data) => {            
           setProductos(data);
         })
         .catch((error) => console.log(error));
@@ -18,13 +18,20 @@ export default function Catalogo(){
       consultarProductos();
     }, []);
     
+    const productosFiltrados = getProductos.filter((producto) => {
+        if (tipo === "sale") {
+          return producto.info.descuento !== "";
+        } else {
+          return producto.info.categoria === tipo;
+        }
+      });
 
     
     return(
         <div>
             <div className="barraFiltrado">
                 <button className="ordenarPor">Ordenar Por</button>
-                <p className="cantidadProductos">{getProductos.length} Productos</p>
+                <p className="cantidadProductos">{productosFiltrados.length} Productos</p>
                 <button className="filtros">Filtros
                     <img src="../public/filter.png" />
                 </button>
@@ -34,15 +41,9 @@ export default function Catalogo(){
 
             <div className="catalogoProductos">
 
-                {getProductos.map(producto=>
-                {
-                    if (producto.info.categoria == "hombre") {
-                        return<ProductosCatalogo producto={producto} id={producto.id} />
-                    }
-                    
-                }
-                    
-                )}
+            {productosFiltrados.map((producto) => (
+                <ProductosCatalogo key={producto.id} producto={producto} id={producto.id} />
+            ))}
 
             </div>
 
