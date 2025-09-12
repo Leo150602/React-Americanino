@@ -6,22 +6,22 @@ export default function Panel4x1(){
 
         <div className="panel4x1">
 
-            <Link to="/catalogo/mujer">
+            <Link to="/catalogo?clasificacion=mujer&categoria=buzo">
                 <img src="../src/assets/imagenes/panel4x1_1.webp" alt="" />
                 <p>BUZOS PARA MUJER</p>
                 <p className="textoGrande">Ver Buzos</p>
             </Link>
-            <Link to="/catalogo/hombre">
+            <Link to="/catalogo?clasificacion=hombre&categoria=Jean">
                 <img src="../src/assets/imagenes/panel4x1_2.webp" alt="" />
                 <p>PANTALON PARA HOMBRE</p>
                 <p className="textoGrande">Ver Pantalones</p>
             </Link>
-            <Link to="/catalogo/mujer">
+            <Link to="/catalogo?clasificacion=mujer&categoria=Jean">
                 <img src="../src/assets/imagenes/panel4x1_3.webp" alt="" />
                 <p>PANTALON PARA MUJER</p>
                 <p className="textoGrande">Ver Pantalones</p>
             </Link>
-            <Link to="/catalogo/hombre">
+            <Link to="/catalogo?clasificacion=hombre&categoria=camisa">
                 <img src="../src/assets/imagenes/panel4x1_4.webp" alt="" />
                 <p>CAMISAS PARA HOMBRE</p>
                 <p className="textoGrande">Ver Camisas</p>

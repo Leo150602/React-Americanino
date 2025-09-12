@@ -1,4 +1,3 @@
-// src/pages/Home.jsx
 import Carrusel from "../components/carrusel/Carrusel.jsx";
 import Panel1x1 from "../components/paneles/Panel1x1.jsx";
 import Panel2x1 from "../components/paneles/Panel2x1.jsx";

@@ -2,10 +2,16 @@ import { useEffect, useState } from "react"
 import ProductosCatalogo from "../../components/productosCatalogo/ProductosCatalogo"
 import "./catalogo.css"
 import { endpoints } from "../../utils/api";
+import { useSearchParams } from "react-router-dom";
 
-export default function Catalogo({tipo}){
+export default function Catalogo(){
 
     const [getProductos, setProductos] = useState([]);
+    const [searchParams, setSearchParams] = useSearchParams();
+
+    let filtros = searchParams.getAll("categoria")
+    let clasificacion = searchParams.get("clasificacion")
+
     function consultarProductos() {
       fetch(endpoints.productos)
         .then((response) => response.json())
@@ -19,11 +25,15 @@ export default function Catalogo({tipo}){
     }, []);
     
     const productosFiltrados = getProductos.filter((producto) => {
-        if (tipo === "sale") {
-          return producto.info.descuento !== "";
-        } else {
-          return producto.info.categoria === tipo;
+        let pasaClasificacion
+        if(clasificacion == "sale"){
+            pasaClasificacion = producto.info.descuento != ""
+        }else{
+            pasaClasificacion = !clasificacion || clasificacion == producto.info.categoria
         }
+        let pasaFiltros = filtros.length == 0 || filtros.includes(producto.info.caracteristicas)
+        
+        return pasaFiltros && pasaClasificacion
       });
 
     
@@ -42,7 +52,7 @@ export default function Catalogo({tipo}){
             <div className="catalogoProductos">
 
             {productosFiltrados.map((producto) => (
-                <ProductosCatalogo key={producto.id} producto={producto} id={producto.id} />
+                <ProductosCatalogo key={producto.id} producto={producto} id={producto.id} descuento={producto.info.descuento}/>
             ))}
 
             </div>

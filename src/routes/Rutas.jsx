@@ -10,20 +10,14 @@ export default function Rutas() {
         <Routes>
 
             <Route element={<LayoutPublico />}>
-                <Route index element={<Home />} />
+                <Route path="/" element={<Home/>} />
+                <Route path="/catalogo" element={<Catalogo/>}/>
 
-                <Route path="catalogo">
-                    <Route path="hombre" element={<Catalogo tipo="hombre" />} />
-                    <Route path="mujer" element={<Catalogo tipo="mujer" />} />
-                    <Route path="sale" element={<Catalogo tipo="sale" />} />
-
-
-                </Route>
-
-                <Route path="detallesProducto/:id" element={<DetallesProducto />} />
+                <Route path="/detallesProducto/:id" element={<DetallesProducto/>} />
             </Route>
 
 
         </Routes>
     );
 }
+
