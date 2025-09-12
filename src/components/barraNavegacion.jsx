@@ -274,9 +274,9 @@ export default function Navbar({ idPagina = "index" , abrirCarrito}) {
                 </nav>
 
                 <div className="navegacionCategorias">
-                    <NavLink to="/catalogo/hombre" className="enlaceCategoria">HOMBRE</NavLink>
-                    <NavLink to="/catalogo/mujer" className="enlaceCategoria">MUJER</NavLink>
-                    <NavLink to="/catalogo/sale" className="enlaceCategoria categoriaSale">SALE</NavLink>
+                    <NavLink to="/catalogo?clasificacion=hombre" className="enlaceCategoria">HOMBRE</NavLink>
+                    <NavLink to="/catalogo?clasificacion=mujer" className="enlaceCategoria">MUJER</NavLink>
+                    <NavLink to="/catalogo?clasificacion=sale" className="enlaceCategoria categoriaSale">SALE</NavLink>
                 </div>
             </header>
 
@@ -295,9 +295,9 @@ export default function Navbar({ idPagina = "index" , abrirCarrito}) {
                 </div>
                 <ul className="panelLateralLista">
 
-                    <li><NavLink to="/catalogo/hombre" onClick={() => setMenuMovilAbierto(false)}>HOMBRE</NavLink></li>
-                    <li><NavLink to="/catalogo/mujer" onClick={() => setMenuMovilAbierto(false)}>MUJER</NavLink></li>
-                    <li><NavLink to="/catalogo/sale" onClick={() => setMenuMovilAbierto(false)}>SALE</NavLink></li>
+                    <li><NavLink to="/catalogo?clasificacion=hombre" onClick={() => setMenuMovilAbierto(false)}>HOMBRE</NavLink></li>
+                    <li><NavLink to="/catalogo?clasificacion=mujer" onClick={() => setMenuMovilAbierto(false)}>MUJER</NavLink></li>
+                    <li><NavLink to="/catalogo?clasificacion=sale" onClick={() => setMenuMovilAbierto(false)}>SALE</NavLink></li>
                 </ul>
             </div>
 
