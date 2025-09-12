@@ -1,9 +1,18 @@
-.detalleProducto {
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+.detalles-producto {
     display: flex;
-    justify-content: center;
+    justify-content: flex-start;
     align-items: flex-start;
-    gap: 2rem;
-    padding: 2rem;
-    max-width: 1200px;
-    margin: 0 auto;
+    gap: 50px;
+    margin: 50px auto;
+    max-width: 1400px;
+}
+
+.detalles-producto>div {
+    flex: 1;
 }
