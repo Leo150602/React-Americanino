@@ -2,11 +2,11 @@ import React, { useState } from "react";
 import Swal from "sweetalert2";
 import styled from "styled-components";
 
-const Button = () => {
+const Button = (talla) => {
   const [seleccionTalla, setSeleccionTalla] = useState(null);
 
   const agregarCarrito = () => {
-    if (!seleccionTalla) {
+    if (talla != null) {
       return Swal.fire(
         "Por favor selecciona una talla antes de agregar al carrito."
       );

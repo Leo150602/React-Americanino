@@ -32,7 +32,7 @@ function DescripProducto({ producto }) {
                 )}
             </div>
 
-            <BotonCompra />
+            <BotonCompra talla={seleccionTalla} />
 
             <p className="descripcionProducto">{info.descripcion}</p>
             <p className="paisFabricacion">{info.paisFabricacion}</p>
