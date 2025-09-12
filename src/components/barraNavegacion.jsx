@@ -293,7 +293,7 @@ export default function Navbar({ idPagina = "index" , abrirCarrito}) {
                         ✕
                     </button>
                 </div>
-                <ul className="panelLateralLista">
+               <ul className="panelLateralLista">
 
                     <li><NavLink to="/catalogo?clasificacion=hombre" onClick={() => setMenuMovilAbierto(false)}>HOMBRE</NavLink></li>
                     <li><NavLink to="/catalogo?clasificacion=mujer" onClick={() => setMenuMovilAbierto(false)}>MUJER</NavLink></li>

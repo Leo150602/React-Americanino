@@ -15,6 +15,17 @@ function ImagesProductos({ producto }) {
 
     return (
         <div className="galeriaProducto">
+            <div className="contenedorImgPrincipal">
+                {imagenPrincipal ? (
+                    <img
+                        src={`${URL}/${imagenPrincipal}`}
+                        alt={info.nombre}
+                        className="imagen-principal"
+                    />
+                ) : (
+                    <div>Imagen principal no disponible</div>
+                )}
+            </div>
             <div id="miniaturas">
                 {fotos.map((foto, index) => (
                     <img
@@ -27,17 +38,6 @@ function ImagesProductos({ producto }) {
                 ))}
             </div>
 
-            <div className="contenedorImgPrincipal">
-                {imagenPrincipal ? (
-                    <img
-                        src={`${URL}/${imagenPrincipal}`}
-                        alt={info.nombre}
-                        className="imagen-principal"
-                    />
-                ) : (
-                    <div>Imagen principal no disponible</div>
-                )}
-            </div>
         </div>
     );
 }
